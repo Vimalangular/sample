@@ -18,9 +18,9 @@
       </div>
     </div>
   </div>
-  <div class="col-md-6">
-    <h4>Tutorials List</h4>
-    <ul class="list-group">
+  <div class="col-md-7 card-body card p-3">
+    <h4 class = "text-center text-warning">Product List</h4>	<br/>
+    <ul class="list-group col-md-7">
       <li
         class="list-group-item"
         *ngFor="let tutorial of tutorials; let i = index"
@@ -30,14 +30,15 @@
         {{ tutorial.title }}
       </li>
     </ul>
-
-    <button class="m-3 btn btn-sm btn-danger" (click)="removeAllTutorials()">
+	<br/>
+    <button class="btn btn-danger col-2" (click)="removeAllTutorials()">
       Remove All
     </button>
+	<br/>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-5 card-body card p-3">
     <div *ngIf="currentTutorial">
-      <h4>Tutorial</h4>
+      <h4 class = "text-center text-warning">Details</h4>
       <div>
         <label><strong>Title:</strong></label> {{ currentTutorial.title }}
       </div>
@@ -50,7 +51,7 @@
         {{ currentTutorial.published ? "Published" : "Pending" }}
       </div>
 
-      <a class="badge badge-warning" href="/tutorials/{{ currentTutorial.id }}">
+      <a class="btn btn-warning" href="/tutorials/{{ currentTutorial.id }}">
         Edit
       </a>
     </div>
